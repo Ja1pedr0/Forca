@@ -45,3 +45,4 @@ camisa
 telefone
 relogio
 mochila
+estojo
