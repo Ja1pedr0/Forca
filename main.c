@@ -5,7 +5,8 @@
 void main()
 {
 	//Definir qual será a palavra através do palavras.txt
-	
+	char palavra[50];
+	void carregarPalavras(&palavra);
 	//Deve selecionar de maneira aleatória.
 	//Preciso definir de um jeito que eu consiga separar as letras.
 	//Rodar o jogo da forca:
