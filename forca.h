@@ -1,4 +1,4 @@
-void carregarPalavras()
-void desenharForca()
-verificarLetra()
-registrarResultado()
+void carregarPalavras(char *palavra);
+//void desenharForca()
+//verificarLetra()
+//registrarResultado()

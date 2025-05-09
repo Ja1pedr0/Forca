@@ -1,12 +1,15 @@
 #include "forca.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "forca.h"
 
 void main()
 {
 	//Definir qual será a palavra através do palavras.txt
 	char palavra[50];
-	void carregarPalavras(&palavra);
+	carregarPalavras(palavra);
+	printf("%s", palavra);
+	system("pause");
 	//Deve selecionar de maneira aleatória.
 	//Preciso definir de um jeito que eu consiga separar as letras.
 	//Rodar o jogo da forca:
