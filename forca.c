@@ -70,3 +70,21 @@ void desenharForca(int vidas)
 
 	}
 }
+
+void desenharJogo(char palavra[])
+{
+	int count = 0;
+	int i;
+	for(i=0;i<=50;i++)
+	{
+		if(palavra[i]=='\0'){break;}
+		count = count + 1;
+	} 
+	printf("\n");
+	for(i=0; i<=count-1;i++)
+	{
+		printf("_ ");
+	}
+	printf("\n");
+	printf("===========================================================\n");
+}
