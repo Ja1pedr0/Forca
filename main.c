@@ -7,6 +7,8 @@ void main()
 	//Definir qual será a palavra através do palavras.txt
 	char palavra[50];
 	carregarPalavras(palavra);
+	int vidas = 0;
+	desenharForca(vidas);
 	//Rodar o jogo da forca:
 	//Exibir o desenho da forca
 	//exibir a quantidade de _ de acordo com o número de letras

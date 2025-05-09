@@ -56,7 +56,7 @@ void desenharForca(int vidas)
 	}
 	if(vidas==2)
 	{
-		printf("  ________\n |       |\n |       |\n |       O\n |       |\n |       \n   |       \n_|___\n");
+		printf("  ________\n |       |\n |       |\n |       O\n |       |\n |       \n |       \n_|___\n");
 
 	}
 	if(vidas==1)
