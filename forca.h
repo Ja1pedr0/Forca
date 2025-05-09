@@ -1,4 +1,4 @@
 void carregarPalavras(char *palavra);
-//void desenharForca()
+void desenharForca(int vidas);
 //verificarLetra()
 //registrarResultado()
