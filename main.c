@@ -6,15 +6,14 @@ void main()
 {
 	//Definir qual será a palavra através do palavras.txt
 	char palavra[50];
+	char palavrasused[27] = "aeiou";
 	carregarPalavras(palavra);
 	int vidas = 4;
 	system("cls");
 	desenharForca(vidas);
-	desenharJogo(palavra);
+	desenharJogo(palavra, palavrasused);
 	printf("%s\n",palavra);
-	//Rodar o jogo da forca:
-	//Exibir o desenho da forca
-	//exibir a quantidade de _ de acordo com o número de letras
+
 	//pedir ao jogador para entrar com uma letra
 	//se a letra não foi usada:
 	//verificar se existe a letra na palavra.

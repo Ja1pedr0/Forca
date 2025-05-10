@@ -69,21 +69,32 @@ void desenharForca(int vidas)
 		printf("  ________\n |       |\n |       |\n |       O\n |      /|\\\n |      / \\\n |       \n_|___\n");
 
 	}
+	printf("\n");
 }
 
-void desenharJogo(char palavra[])
+void desenharJogo(char palavra[], char letrasused[])
 {
-	int count = 0;
+	int tamanho = strlen(palavra);
 	int i;
-	for(i=0;i<=50;i++)
+	int tamanhoused= strlen(letrasused);
+	int t;
+	int achou;
+	for(i=0; i<tamanho;i++)
 	{
-		if(palavra[i]=='\0'){break;}
-		count = count + 1;
-	} 
-	printf("\n");
-	for(i=0; i<=count-1;i++)
-	{
-		printf("_ ");
+		achou =0;
+		for(t=0;t<tamanhoused;t++)
+		{
+			if(palavra[i] == letrasused[t])
+			{
+				printf(" %c", palavra[i]);
+				achou = 1;
+				break;
+			}
+		}
+			if(achou==0)
+			{
+				printf(" _");
+			}	
 	}
 	printf("\n");
 	printf("===========================================================\n");
