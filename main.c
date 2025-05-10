@@ -14,7 +14,6 @@ void main()
 	int tamanhopalavra = strlen(palavra);
 	int i, temletra;
 
-
 	carregarPalavras(palavra);
 	system("cls");
 	desenharForca(vidas);
@@ -31,6 +30,7 @@ void main()
 			if(verificarLetra(novaletra, letrasused, tamanhoused))
 			{
 				printf("Essa letra ja foi usada, tente novamente!");
+				Sleep(1700);
 			}
 			else if(verificarLetra(novaletra, letrasused, tamanhoused)==0)
 			{
@@ -46,9 +46,17 @@ void main()
 			}
 			if(temletra==0){vidas = vidas-1;}
 			system("cls");
+			if(vidas==0)
+			{
+				desenharForca(vidas);
+				printf("===========================================================\n");
+				printf("Game Over!!\n");
+				printf("A resposta era: %s\n", palavra);
+				Sleep(2000);
+				break;
+			}
 			desenharForca(vidas);
 			desenharJogo(palavra, letrasused, tamanhoused);
-
 		}
 		else
 		{
