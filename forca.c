@@ -72,16 +72,13 @@ void desenharForca(int vidas)
 	printf("\n");
 }
 
-void desenharJogo(char palavra[], char letrasused[])
+void desenharJogo(char palavra[], char letrasused[],int tamanhoused)
 {
 	int tamanho = strlen(palavra);
-	int i;
-	int tamanhoused= strlen(letrasused);
-	int t;
-	int achou;
+	int i, t, achou;
 	for(i=0; i<tamanho;i++)
 	{
-		achou =0;
+		achou = 0;
 		for(t=0;t<tamanhoused;t++)
 		{
 			if(palavra[i] == letrasused[t])
@@ -98,4 +95,17 @@ void desenharJogo(char palavra[], char letrasused[])
 	}
 	printf("\n");
 	printf("===========================================================\n");
+}
+
+int verificarLetra(char novaletra, char letrasused[],int tamanhoused)
+{
+	int i;
+	for(i=0;i<tamanhoused;i++)
+	{
+		if(novaletra == letrasused[i])
+		{
+			return 1;
+		}
+	}	
+	return 0;
 }

@@ -1,29 +1,62 @@
 #include "forca.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <windows.h>
 
 void main()
 {
-	//Definir qual será a palavra através do palavras.txt
 	char palavra[50];
-	char palavrasused[27] = "aeiou";
-	carregarPalavras(palavra);
+	char letrasused[28] = {0};
 	int vidas = 4;
+	int tamanhoused =0;
+	char novaletra;
+	int tamanhopalavra = strlen(palavra);
+	int i, temletra;
+
+
+	carregarPalavras(palavra);
 	system("cls");
 	desenharForca(vidas);
-	desenharJogo(palavra, palavrasused);
-	printf("%s\n",palavra);
+	desenharJogo(palavra, letrasused, tamanhoused);
 
-	//pedir ao jogador para entrar com uma letra
-	//se a letra não foi usada:
-	//verificar se existe a letra na palavra.
-	//se existe: deve substituir o _ pela letra
-	//se não existe: adicionar uma parte do boneco na forca.
-	//se a letra foi usada: avisar na tela e pedir para inserir outra.
-	//escrever derrota ou vitoria dependendo da condição
-	//exibir a palavra
-	//guardar o nome do jogador
-	//escrever em resultados.txt o nome, a palavra sorteada, e se perdeu ou ganhou.
-	//perguntar se deseja jogar novamente
+	while(1)
+	{
+		if(tamanhoused<28)
+		{
+			temletra = 0;
+			printf("Digite uma letra: ");
+			scanf(" %c", &novaletra);
+			getchar();
+			if(verificarLetra(novaletra, letrasused, tamanhoused))
+			{
+				printf("Essa letra ja foi usada, tente novamente!");
+			}
+			else if(verificarLetra(novaletra, letrasused, tamanhoused)==0)
+			{
+				letrasused[tamanhoused] = novaletra;
+				tamanhoused++;
+			}
+			for(i=0;i<tamanhopalavra;i++)
+			{
+				if(palavra[i]==novaletra)
+				{
+					temletra = 1;
+				}
+			}
+			if(temletra==0){vidas = vidas-1;}
+			system("cls");
+			desenharForca(vidas);
+			desenharJogo(palavra, letrasused, tamanhoused);
+
+		}
+		else
+		{
+			system("cls");
+			printf("Erro de memoria, voce ja usou todas as letras possiveis!!\n");
+			Sleep(2000);
+			exit(1);
+		}
+	}	
 	system("pause");
 }
