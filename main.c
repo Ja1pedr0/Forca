@@ -11,10 +11,11 @@ void main()
 	int vidas = 4;
 	int tamanhoused =0;
 	char novaletra;
-	int tamanhopalavra = strlen(palavra);
 	int i, temletra;
+	int venceu = 0;
 
 	carregarPalavras(palavra);
+	int tamanhopalavra = strlen(palavra);
 	system("cls");
 	desenharForca(vidas);
 	desenharJogo(palavra, letrasused, tamanhoused);
@@ -31,6 +32,10 @@ void main()
 			{
 				printf("Essa letra ja foi usada, tente novamente!");
 				Sleep(1700);
+				system("cls");
+				desenharForca(vidas);
+				desenharJogo(palavra, letrasused, tamanhoused);
+				continue;
 			}
 			else if(verificarLetra(novaletra, letrasused, tamanhoused)==0)
 			{
@@ -55,8 +60,16 @@ void main()
 				Sleep(2000);
 				break;
 			}
+			venceu = verificarVitoria(letrasused, palavra, tamanhopalavra, tamanhoused);
 			desenharForca(vidas);
 			desenharJogo(palavra, letrasused, tamanhoused);
+			if(venceu)
+			{
+				Sleep(1000);
+				system("cls");
+				printf("Parabens!!! Voce Venceu!\n");
+				break;
+			}
 		}
 		else
 		{

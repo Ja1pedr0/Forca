@@ -109,3 +109,21 @@ int verificarLetra(char novaletra, char letrasused[],int tamanhoused)
 	}	
 	return 0;
 }
+
+int verificarVitoria(char letrasused[], char palavra[],int tamanhopalavra, int tamanhoused)
+{
+	int i, t;
+	int progresso = 0;
+	for(i=0;i<tamanhopalavra;i++)
+	{
+		for(t=0;t<tamanhoused;t++)
+		{
+			if(letrasused[t] == palavra[i])
+			{
+				progresso++;
+			}
+		}
+	}
+	if(progresso==tamanhopalavra){return 1;}
+	else{return 0;}
+}
