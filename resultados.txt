@@ -1,7 +1,2 @@
-sei la
-teste 1
-saiofhdfsjfoasd
-pijdfaosdifjaf
-lajsdflkjsdf
-sadjaslkdjaslkdj
-sei la
+Jogador: languin; Palavra: mapa; Resultado: Vitoria
+Jogador: jp; Palavra: grade; Resultado: Derrota

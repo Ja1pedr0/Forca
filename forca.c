@@ -136,3 +136,13 @@ void resetarray(char array[], int tamanhoarray)
 		array[i]=0;
 	}
 }
+
+void registrarResultado(char nome[], int venceu, char palavra[])
+{
+	FILE *resultados;
+	resultados = fopen("resultados.txt", "a");
+	fprintf(resultados, "Jogador: %s; Palavra: %s;", nome, palavra);
+	if(venceu){fprintf(resultados, " Resultado: Vitoria\n");}
+	else{fprintf(resultados, " Resultado: Derrota\n");}
+	fclose(resultados);
+}

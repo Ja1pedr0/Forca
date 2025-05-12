@@ -24,6 +24,7 @@ void main()
 		venceu = 0;
 		printf("Digite seu nome: ");
 		fgets(nome, sizeof(nome), stdin);
+		nome[strcspn(nome, "\n")] = '\0';
 		carregarPalavras(palavra);
 		int tamanhopalavra = strlen(palavra);
 		resetarray(letrasused, 28);
@@ -61,6 +62,7 @@ void main()
 			system("cls");
 			if(vidas==0)
 			{
+				registrarResultado(nome, venceu, palavra);
 				desenharForca(vidas);
 				printf("===========================================================\n");
 				Sleep(1500);
@@ -93,6 +95,7 @@ void main()
 			desenharJogo(palavra, letrasused, tamanhoused);
 			if(venceu)
 			{
+				registrarResultado(nome, venceu, palavra);
 				Sleep(1000);
 				system("cls");
 				printf("__     __         //\\  __     __                        _ \n");
