@@ -8,21 +8,29 @@ void main()
 {
 	char palavra[50];
 	char letrasused[28] = {0};
-	int vidas = 4;
-	int tamanhoused =0;
+	int vidas;
+	int tamanhoused;
 	char novaletra;
 	int i, temletra;
-	int venceu = 0;
+	int venceu;
+	char nome[50];
+	char jogardnv = 's';
 
-	carregarPalavras(palavra);
-	int tamanhopalavra = strlen(palavra);
-	system("cls");
-	desenharForca(vidas);
-	desenharJogo(palavra, letrasused, tamanhoused);
 
-	while(1)
-	{
-		if(tamanhoused<28)
+	while(jogardnv=='s'){
+		system("cls");
+		vidas =4;
+		tamanhoused = 0;
+		venceu = 0;
+		printf("Digite seu nome: ");
+		fgets(nome, sizeof(nome), stdin);
+		carregarPalavras(palavra);
+		int tamanhopalavra = strlen(palavra);
+		resetarray(letrasused, 28);
+		system("cls");
+		desenharForca(vidas);
+		desenharJogo(palavra, letrasused, tamanhoused);
+		while(1)
 		{
 			temletra = 0;
 			printf("Digite uma letra: ");
@@ -57,6 +65,9 @@ void main()
 				printf("===========================================================\n");
 				printf("Game Over!!\n");
 				printf("A resposta era: %s\n", palavra);
+				printf("Deseja jogar novamente? (s/n)\n");
+				scanf("%c", &jogardnv);
+				getchar();
 				Sleep(2000);
 				break;
 			}
@@ -68,15 +79,11 @@ void main()
 				Sleep(1000);
 				system("cls");
 				printf("Parabens!!! Voce Venceu!\n");
+				printf("Deseja jogar novamente? (s/n)\n");
+				scanf("%c", &jogardnv);
+				getchar();
 				break;
 			}
-		}
-		else
-		{
-			system("cls");
-			printf("Erro de memoria, voce ja usou todas as letras possiveis!!\n");
-			Sleep(2000);
-			exit(1);
 		}
 	}	
 	system("pause");

@@ -127,3 +127,12 @@ int verificarVitoria(char letrasused[], char palavra[],int tamanhopalavra, int t
 	if(progresso==tamanhopalavra){return 1;}
 	else{return 0;}
 }
+
+void resetarray(char array[], int tamanhoarray)
+{
+	int i;
+	for(i=0;i<tamanhoarray;i++)
+	{
+		array[i]=0;
+	}
+}
